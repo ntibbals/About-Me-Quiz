@@ -13,9 +13,7 @@ namespace Lab01_About_Me_Quiz
                 Console.WriteLine("Welcome to a quiz all about me, Nate.");
                 int answer1 = QuestionOne();
                 if (answer1 == 2)
-                {
                     Console.WriteLine("Correct! I have 2 cats.");
-                }
                 else
                     Console.WriteLine($"Sorry but I don't have {answer1} cats. I actually have 2 cats.");
                 Console.ReadLine();
@@ -31,12 +29,18 @@ namespace Lab01_About_Me_Quiz
                 else
                     Console.WriteLine($"I'm sorry {answer3} is a good guess but wrong. My favorite exotic animal is a lion.");
                 Console.ReadLine();
+                string answer4 = QuestionFour();
+                if (answer4 == "Xbox")
+                    Console.WriteLine("Correct. Whereas I love the Super Nintendo console, I currently only dabble in Xbox games.");
+                else
+                    Console.WriteLine($"No, {answer4} is not my current gaming console of choice. I love the old school Nintendo consoles but currently only game on Xbox.");
+                Console.ReadLine();
             }
         }
 
         static int QuestionOne()
         {
-            Console.WriteLine("How many cats do I have?");
+            Console.WriteLine("To begin, try guessing how many cats I have?");
             string input = Console.ReadLine();
 
             int guess = Convert.ToInt32(input);
@@ -61,6 +65,16 @@ namespace Lab01_About_Me_Quiz
             string input = Console.ReadLine();
 
             string answer = input.ToLower();
+
+            return answer;
+        }
+
+        static string QuestionFour()
+        {
+            Console.WriteLine("Between the follow game platforms, which do I prefer: Playstation, Xbox or Nintendo?");
+            string input = Console.ReadLine();
+
+            string answer = input.Substring(0,1).ToUpper() + input.Substring(1);
 
             return answer;
         }
