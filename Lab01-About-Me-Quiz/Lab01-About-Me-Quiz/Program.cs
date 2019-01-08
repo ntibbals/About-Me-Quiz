@@ -9,7 +9,7 @@ namespace Lab01_About_Me_Quiz
             bool runGame = true;
             while (runGame)
             {
-                
+                int counter = 0;
                 runGame = true;
                 Console.WriteLine("Welcome to a quiz all about me, Nate.");
                 Console.WriteLine(CheckOne());
@@ -21,7 +21,7 @@ namespace Lab01_About_Me_Quiz
                 Console.WriteLine(CheckFour());
                 Console.WriteLine();
                 Console.WriteLine(CheckFive());
-                //Console.WriteLine(Counter());
+                Console.WriteLine($"You answered {Counter} questions right");
                 Console.ReadLine();
                 runGame = false;
             }
@@ -54,11 +54,10 @@ namespace Lab01_About_Me_Quiz
 
         static string CheckOne()
         {
-            //int count = 0;
             int answer1 = QuestionOne();
             if (answer1 == 2)
             {
-                //count++;
+                Counter++;
                 return "Correct! I have 2 cats.";
             }
             else
@@ -83,7 +82,10 @@ namespace Lab01_About_Me_Quiz
         {
             bool answer2 = QuestionTwo();
             if (answer2 == true)
+            {
+                Counter++;
                 return "Correct! Whereas I am not originally from Seattle, I am from Spokane, WA on the eastern side of the state.";
+            }
             else
                 return "Wrong. I am in fact from Spokane Valley, WA on the east side of the state.";
         }
@@ -109,7 +111,11 @@ namespace Lab01_About_Me_Quiz
         {
             string answer3 = QuestionThree();
             if (answer3 == "lion")
+            {
+                Counter++;
                 return "Wow! You got it right. My favorite exotic animal is the king of the jungle, a lion.";
+
+            }
             else
                 return $"I'm sorry {answer3} is a good guess but wrong. My favorite exotic animal is a lion.";
         }
@@ -141,7 +147,10 @@ namespace Lab01_About_Me_Quiz
         {
             string answer4 = QuestionFour();
             if (answer4 == "Xbox")
+            {
+                Counter++;
                 return "Correct. I do love the odl school Super Nintendo console, I currently only dabble in Xbox games.";
+            }
             else
                 return $"No, {answer4} is not my current gaming console of choice. I love the old school Nintendo consoles but currently only game on Xbox.";
         }
@@ -166,9 +175,15 @@ namespace Lab01_About_Me_Quiz
         {
             bool answer5 = QuestionFive();
             if (answer5 == true)
+            {
+                Counter++;
                 return "That's correct! I've played since I was little and will always have a passion for hopping!";
+            }
             else
                 return "That's a great sport but I love basketball.";
         }
+
+        public static int Counter = 0;
+
     }
 }
