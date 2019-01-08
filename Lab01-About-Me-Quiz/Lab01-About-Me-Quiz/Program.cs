@@ -12,9 +12,13 @@ namespace Lab01_About_Me_Quiz
                 runGame = true;
                 Console.WriteLine("Welcome to a quiz all about me, Nate.");
                 Console.WriteLine(CheckOne());
+                Console.WriteLine();
                 Console.WriteLine(CheckTwo());
+                Console.WriteLine();
                 Console.WriteLine(CheckThree());
+                Console.WriteLine();
                 Console.WriteLine(CheckFour());
+                Console.WriteLine();
                 Console.WriteLine(CheckFive());
 
                 Console.ReadLine();
@@ -24,11 +28,27 @@ namespace Lab01_About_Me_Quiz
 
         static int QuestionOne()
         {
-            Console.WriteLine("To begin, try guessing how many cats I have?");
-            string input = Console.ReadLine();
 
-            int guess = Convert.ToInt32(input);
+            int guess = 0;
+            bool eCheck = true;
+            while (eCheck)
+            {
+                try
+                {
+                    Console.WriteLine("To begin, try guessing how many cats I have?");
 
+                    string input = Console.ReadLine();
+                    guess = Convert.ToInt32(input);
+                    return guess;
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"You've hit the following exception: {e.Message}.");
+                    Console.ReadLine();
+                }
+            }
+           
             return guess;
         }
 
@@ -65,6 +85,7 @@ namespace Lab01_About_Me_Quiz
         }
         static string QuestionThree()
         {
+
             Console.WriteLine("What is my favorite exotic animal?");
             string input = Console.ReadLine();
 
@@ -95,7 +116,7 @@ namespace Lab01_About_Me_Quiz
         {
             string answer4 = QuestionFour();
             if (answer4 == "Xbox")
-                return "Correct. Whereas I love the Super Nintendo console, I currently only dabble in Xbox games.";
+                return "Correct. I do love the odl school Super Nintendo console, I currently only dabble in Xbox games.";
             else
                 return $"No, {answer4} is not my current gaming console of choice. I love the old school Nintendo consoles but currently only game on Xbox.";
         }
@@ -114,8 +135,7 @@ namespace Lab01_About_Me_Quiz
                 return true;
             else
                 return false;
-
-            
+   
         }
         static string CheckFive()
         {
@@ -123,7 +143,7 @@ namespace Lab01_About_Me_Quiz
             if (answer5 == true)
                 return "That's correct! I've played since I was little and will always have a passion for hopping!";
             else
-                return $"Whereas {answer5} is a great sport, I love basketball.";
+                return "That's a great sport but I love basketball.";
         }
     }
 }
