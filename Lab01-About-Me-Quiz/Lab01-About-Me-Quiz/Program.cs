@@ -14,21 +14,9 @@ namespace Lab01_About_Me_Quiz
                 Console.WriteLine(CheckOne());
                 Console.WriteLine(CheckTwo());
                 Console.WriteLine(CheckThree());
-                string answer3 = QuestionThree();
-                if (answer3 == "lion")
-                    Console.WriteLine("Wow! You got it right. My favorite exotic animal is the king of the jungle, a lion.");
-                else
-                    Console.WriteLine($"I'm sorry {answer3} is a good guess but wrong. My favorite exotic animal is a lion.");
-                string answer4 = QuestionFour();
-                if (answer4 == "Xbox")
-                    Console.WriteLine("Correct. Whereas I love the Super Nintendo console, I currently only dabble in Xbox games.");
-                else
-                    Console.WriteLine($"No, {answer4} is not my current gaming console of choice. I love the old school Nintendo consoles but currently only game on Xbox.");
-                bool answer5 = QuestionFive();
-                if (answer5 == true)
-                    Console.WriteLine("That's correct! I've played since I was little and will always have a passion for hopping!");
-                else
-                    Console.WriteLine($"Whereas {answer5} is a great sport, I love basketball.");
+                Console.WriteLine(CheckFour());
+                Console.WriteLine(CheckFive());
+
                 Console.ReadLine();
                 runGame = false;
             }
@@ -85,6 +73,14 @@ namespace Lab01_About_Me_Quiz
             return answer;
         }
 
+        static string CheckThree()
+        {
+            string answer3 = QuestionThree();
+            if (answer3 == "lion")
+                return "Wow! You got it right. My favorite exotic animal is the king of the jungle, a lion.";
+            else
+                return $"I'm sorry {answer3} is a good guess but wrong. My favorite exotic animal is a lion.";
+        }
         static string QuestionFour()
         {
             Console.WriteLine("Between the following gaming platforms, which do I prefer: Playstation, Xbox or Nintendo?");
@@ -95,6 +91,14 @@ namespace Lab01_About_Me_Quiz
             return answer;
         }
 
+        static string CheckFour()
+        {
+            string answer4 = QuestionFour();
+            if (answer4 == "Xbox")
+                return "Correct. Whereas I love the Super Nintendo console, I currently only dabble in Xbox games.";
+            else
+                return $"No, {answer4} is not my current gaming console of choice. I love the old school Nintendo consoles but currently only game on Xbox.";
+        }
         static bool QuestionFive()
         {
             Console.WriteLine("What do you think my favorite sport to play is?");
@@ -112,6 +116,14 @@ namespace Lab01_About_Me_Quiz
                 return false;
 
             
+        }
+        static string CheckFive()
+        {
+            bool answer5 = QuestionFive();
+            if (answer5 == true)
+                return "That's correct! I've played since I was little and will always have a passion for hopping!";
+            else
+                return $"Whereas {answer5} is a great sport, I love basketball.";
         }
     }
 }
