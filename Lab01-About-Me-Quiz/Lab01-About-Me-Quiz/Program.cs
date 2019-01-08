@@ -25,6 +25,12 @@ namespace Lab01_About_Me_Quiz
                 else
                     Console.WriteLine("Wrong. I am in fact from Spokane Valley, WA on the east side of the state.");
                 Console.ReadLine();
+                string answer3 = QuestionThree();
+                if (answer3 == "lion")
+                    Console.WriteLine("Wow! You got it right. My favorite exotic animal is the king of the jungle, a lion.");
+                else
+                    Console.WriteLine($"I'm sorry {answer3} is a good guess but wrong. My favorite exotic animal is a lion.");
+                Console.ReadLine();
             }
         }
 
@@ -47,6 +53,16 @@ namespace Lab01_About_Me_Quiz
                 return true;
             else
                 return false;
+        }
+
+        static string QuestionThree()
+        {
+            Console.WriteLine("What is my favorite exotic animal?");
+            string input = Console.ReadLine();
+
+            string answer = input.ToLower();
+
+            return answer;
         }
     }
 }
