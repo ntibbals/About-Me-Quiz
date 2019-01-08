@@ -9,6 +9,7 @@ namespace Lab01_About_Me_Quiz
             bool runGame = true;
             while (runGame)
             {
+                
                 runGame = true;
                 Console.WriteLine("Welcome to a quiz all about me, Nate.");
                 Console.WriteLine(CheckOne());
@@ -20,7 +21,7 @@ namespace Lab01_About_Me_Quiz
                 Console.WriteLine(CheckFour());
                 Console.WriteLine();
                 Console.WriteLine(CheckFive());
-
+                //Console.WriteLine(Counter());
                 Console.ReadLine();
                 runGame = false;
             }
@@ -45,7 +46,6 @@ namespace Lab01_About_Me_Quiz
                 catch (Exception e)
                 {
                     Console.WriteLine($"You've hit the following exception: {e.Message}.");
-                    Console.ReadLine();
                 }
             }
            
@@ -54,9 +54,13 @@ namespace Lab01_About_Me_Quiz
 
         static string CheckOne()
         {
+ 
             int answer1 = QuestionOne();
             if (answer1 == 2)
+            {
+                //count++;
                 return "Correct! I have 2 cats.";
+            }
             else
                 return $"Sorry but I don't have {answer1} cats. I actually have 2 cats.";
         }
@@ -85,12 +89,19 @@ namespace Lab01_About_Me_Quiz
         }
         static string QuestionThree()
         {
+            string answer = "";
+            try
+            {
+                Console.WriteLine("What is my favorite exotic animal?");
+                string input = Console.ReadLine();
 
-            Console.WriteLine("What is my favorite exotic animal?");
-            string input = Console.ReadLine();
-
-            string answer = input.ToLower();
-
+                answer = input.ToLower();
+                return answer;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"You've hit the following exception: {e.Message}. Try again.");
+            }
             return answer;
         }
 
@@ -104,12 +115,26 @@ namespace Lab01_About_Me_Quiz
         }
         static string QuestionFour()
         {
-            Console.WriteLine("Between the following gaming platforms, which do I prefer: Playstation, Xbox or Nintendo?");
-            string input = Console.ReadLine();
+            string answer = "";
+            bool eCheck = true;
+            while (eCheck)
+            {
+                try
+                {
+                    Console.WriteLine("Between the following gaming platforms, which do I prefer: Playstation, Xbox or Nintendo?");
+                    string input = Console.ReadLine();
 
-            string answer = input.Substring(0,1).ToUpper() + input.Substring(1);
+                    answer = input.Substring(0, 1).ToUpper() + input.Substring(1);
 
+                    return answer;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"You've hit the following exception: {e.Message}. Try again.");
+                }
+            }
             return answer;
+
         }
 
         static string CheckFour()
