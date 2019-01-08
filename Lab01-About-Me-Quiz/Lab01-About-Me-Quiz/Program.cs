@@ -45,7 +45,7 @@ namespace Lab01_About_Me_Quiz
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine($"You've hit the following exception: {e.Message}.");
+                    Console.WriteLine($"You've hit the following exception: {e.Message}. Try again.");
                 }
             }
            
@@ -54,7 +54,7 @@ namespace Lab01_About_Me_Quiz
 
         static string CheckOne()
         {
- 
+            //int count = 0;
             int answer1 = QuestionOne();
             if (answer1 == 2)
             {
