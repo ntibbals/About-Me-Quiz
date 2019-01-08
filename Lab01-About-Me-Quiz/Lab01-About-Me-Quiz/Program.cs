@@ -11,16 +11,9 @@ namespace Lab01_About_Me_Quiz
             {
                 runGame = true;
                 Console.WriteLine("Welcome to a quiz all about me, Nate.");
-                int answer1 = QuestionOne();
-                if (answer1 == 2)
-                    Console.WriteLine("Correct! I have 2 cats.");
-                else
-                    Console.WriteLine($"Sorry but I don't have {answer1} cats. I actually have 2 cats.");
-                bool answer2 = QuestionTwo();
-                if (answer2 == true)
-                    Console.WriteLine("Correct! Whereas I am not originally from Seattle, I am from Spokane, WA on the eastern side of the state.");
-                else
-                    Console.WriteLine("Wrong. I am in fact from Spokane Valley, WA on the east side of the state.");
+                Console.WriteLine(CheckOne());
+                Console.WriteLine(CheckTwo());
+                Console.WriteLine(CheckThree());
                 string answer3 = QuestionThree();
                 if (answer3 == "lion")
                     Console.WriteLine("Wow! You got it right. My favorite exotic animal is the king of the jungle, a lion.");
@@ -51,6 +44,14 @@ namespace Lab01_About_Me_Quiz
             return guess;
         }
 
+        static string CheckOne()
+        {
+            int answer1 = QuestionOne();
+            if (answer1 == 2)
+                return "Correct! I have 2 cats.";
+            else
+                return $"Sorry but I don't have {answer1} cats. I actually have 2 cats.";
+        }
         static bool QuestionTwo()
         {
             Console.WriteLine("Am I originally from Washington?");
@@ -66,6 +67,14 @@ namespace Lab01_About_Me_Quiz
                 return false;
         }
 
+        static string CheckTwo()
+        {
+            bool answer2 = QuestionTwo();
+            if (answer2 == true)
+                return "Correct! Whereas I am not originally from Seattle, I am from Spokane, WA on the eastern side of the state.";
+            else
+                return "Wrong. I am in fact from Spokane Valley, WA on the east side of the state.";
+        }
         static string QuestionThree()
         {
             Console.WriteLine("What is my favorite exotic animal?");
