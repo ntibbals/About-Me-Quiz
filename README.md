@@ -16,3 +16,6 @@ Questions 1, 3 and 4 have try/catch implementation
 
 ###Performance Screenshots
 
+![SCEEENSHOT](https://github.com/ntibbals/Lab01-About-Me-Quiz/blob/master/no-exception.PNG)
+
+![SCEENSHOT](https://github.com/ntibbals/Lab01-About-Me-Quiz/blob/master/with-exceptions.PNG)
